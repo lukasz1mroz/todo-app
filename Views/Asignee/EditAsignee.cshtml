@@ -1,0 +1,15 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel='stylesheet' href='~/css/site.css' />
+    <title>TODO edit asignee</title>
+</head>
+<body>
+    <h1>Edit asignee name</h1>
+    <form asp-controller="asignee" asp-action="editasignee" method="post">
+        Edit name<input type="text" name="name" value="" /><br />
+        <button>Submit</button>
+        @Html.ActionLink("Cancel", "index", "asignee")
+    </form>
+</body>
+</html>

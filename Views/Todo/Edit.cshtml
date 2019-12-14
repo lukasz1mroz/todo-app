@@ -1,0 +1,40 @@
+﻿@model  List<Asignee>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TODO edit task</title>
+    <link rel='stylesheet' href='~/css/site.css' />
+</head>
+<body>
+    <br />
+    <p class="sub-header">Edit task</p>
+    <form class="form-row" asp-controller="todo" asp-action="edit" method="post">
+
+        <div class="edit-elem">
+            Due date &nbsp; <input type="date" id="dateInput"><br />
+        </div>
+
+        <div class="edit-elem">
+            Is urgent &nbsp; <input type="checkbox">
+        </div>
+
+        <div class="edit-elem">
+            Is done &nbsp; <br /><input type="checkbox">
+        </div>
+
+        <div class="edit-elem">
+            Asignee &nbsp; <select asp-controller="todo" asp-action="edit" method="post" name="asigneeName">
+                @foreach (var item in Model)
+                {
+                    <option>@item.Name</option>
+                }
+            </select>
+        </div>
+
+        <button class="btn btn-outline-secondary col-2 edit-elem">Submit</button>
+   
+    </form>
+        <br />
+        <a type="button" class="btn btn-outline-secondary" href="/">Home</a>
+</body>
+</html>

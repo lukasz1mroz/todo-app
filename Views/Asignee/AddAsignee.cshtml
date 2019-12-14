@@ -1,0 +1,19 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Add new asignee</h1>
+
+    <form asp-controller="asignee" asp-action="addasignee" method="post">
+        Name<input type="text" name="name" value="" /><br />
+        Email<input type="text" name="email" value="" /><br />
+        <button>Submit</button>
+        @Html.ActionLink("Cancel", "index", "asignee")
+    </form>
+
+    @Html.Raw(@ViewData["Alert"])
+
+</body>
+</html>

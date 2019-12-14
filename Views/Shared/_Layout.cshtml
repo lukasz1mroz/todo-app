@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+    <body>
+        <div class="hero">
+            <div class="hero-header">
+                <p>Todo app</p>
+            </div>
+        </div>
+        <br />
+        <div class="nav-bar">
+            <div class="btn-group">
+                <a type="button" class="btn btn-outline-secondary" href="/asignee">Asignees</a>
+                <a type="button" class="btn btn-outline-secondary" href="/todo/add">Add task</a>
+            </div>
+            <form class="input-group" asp-controller="todo" asp-action="list" method="post">
+                <input class="form-control" type="text" name="taskDescription" value="" /><br />
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Find task</button>
+                </div>
+            </form>
+        </div>
+        <br/>
+        @RenderBody()
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="https://unpkg.com/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
+    </body>
+
+</html>

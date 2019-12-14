@@ -1,0 +1,57 @@
+﻿@model IList<EntityFrameworkExercise.Models.Todo>
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+        <link rel='stylesheet' href='~/css/site.css' />
+    </head>
+    <body>
+        <table class="table-responsive-lg table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">TITLE</th>
+                    <th scope="col">DESCRIPTION</th>
+                    <th scope="col">DONE</th>
+                    <th scope="col">URGENT</th>
+                    <th scope="col">ASIGNEE</th>
+                    <th scope="col">CREATED DATE</th>
+                    <th scope="col">DUE DATE</th>
+                    <th scope="col">DELETE</th>
+                    <th scope="col">EDIT</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    @if (item.IsDone)
+                    {
+                        <td><img src="~/images/check-solid.svg" alt="done" height="20" width="20" /></td>
+                    }
+                    else
+                    {
+                        <td><img src="~/images/times-solid.svg" alt="done" height="20" width="20" /></td>
+                    }
+                    @if (item.IsUrgent)
+                    {
+                        <td><img src="~/images/check-solid.svg" alt="done" height="20" width="20" /></td>
+                    }
+                    else
+                    {
+                        <td><img src="~/images/times-solid.svg" alt="done" height="20" width="20" /></td>
+                    }
+                    <td>@(item.Asignee == null ? "" : item.Asignee.Name)</td>
+                    <td>@(item.CreatedAt.ToShortDateString())</td>
+                    <td>@(item.DueAt.ToShortDateString() == "01.01.0001" ? "Not set" : item.DueAt.ToShortDateString())</td>
+                    <td><a href="/todo/@item.Id/delete">Delete</a></td>
+                    <td><a href="/todo/@item.Id/edit">Edit</a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </body>
+    </html>

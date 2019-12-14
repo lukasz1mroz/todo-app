@@ -1,0 +1,102 @@
+﻿
+/*https://www.color-hex.com/color-palette/85368*/
+
+html {
+    margin: 0;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 12vw;
+    padding-right: 12vw;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.hero {
+    padding: 2%;
+    height: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(-45deg, #1b6285, #50a17a, #b0db51);
+    background-size: 400% 400%;
+    -webkit-animation: hero 8s ease-in-out infinite normal;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+@-webkit-keyframes hero {
+    0% { background-position: 0 50%}
+    50% { background-position: 100% 50% }
+    100% { background-position: 0 50% }
+}
+
+.hero-header {
+    border: 2px solid white;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 4vw;
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn-group {
+    width: 49%;
+    text-wrap: none;
+}
+
+.input-group {
+    width: 49%;
+    height: 100%;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.btn {
+    text-size-adjust: auto;
+    border-radius: 0;
+}
+
+.btn-outline-secondary:hover {
+    background: #78c561;
+}
+
+.btn-asignee{
+    align-self: center;
+}
+
+.form-row, col-2, col{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-elem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sub-header{
+    align-self: center;
+    font-size: 3vw;
+}
+
+#dateInput, select {
+     border: 1px solid lightgray;
+}

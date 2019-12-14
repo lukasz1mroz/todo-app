@@ -1,0 +1,35 @@
+﻿@model List<Asignee>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TODO asignee List</title>
+    <link rel='stylesheet' href='~/css/site.css' />
+</head>
+<body>
+    <br />
+    <p class="sub-header">Asignee list</p>
+    <a type="button" class="btn btn-outline-secondary btn-asignee" href="/asignee/addasignee">Add asignee</a>
+    <br />
+
+    <table class="table-responsive-lg table-striped">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">DELETE</th>
+            <th scope="col">EDIT</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row"><a href="/asignee/@item.Id/asigneetasks">@item.Id</a></th>
+                <td class="record">@item.Name</td>
+                <td class="record">@item.Email</td>
+                <td class="record"><a href="/asignee/@item.Id/delete">Delete</a></td>
+                <td class="record"><a href="/asignee/@item.Id/editasignee">Edit</a></td>
+            </tr>
+        }
+    </table><br />
+    <a type="button" class="btn btn-outline-secondary" href="/">Home</a>
+</body>
+</html>

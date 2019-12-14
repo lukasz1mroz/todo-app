@@ -1,0 +1,30 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TODO add task</title>
+    <link rel='stylesheet' href='~/css/site.css' />
+</head>
+<body>
+    <br />
+    <p class="sub-header">Add task</p>
+
+    <form class="form-row" asp-controller="todo" asp-action="/add" method="post">
+        <div class="edit-elem">
+            Title &nbsp; <input type="text" name="title" value="" />
+        </div>
+        <div class="edit-elem">
+            Description &nbsp; <input type="text" name="description" value="" />
+        </div>
+        <div class="edit-elem">
+            Is urgent &nbsp; <input type="checkbox" name="isUrgent" value="true" />
+        </div>
+        <div class="edit-elem">
+            Is done &nbsp; <input type="checkbox" name="isDone" value="true" />
+        </div>
+        <button class="btn btn-outline-secondary col-2 edit-elem">Submit</button>
+    </form>
+    <br />
+    <a type="button" class="btn btn-outline-secondary" href="/">Home</a>
+    @Html.Raw(@ViewData["Alert"])
+</body>
+</html>

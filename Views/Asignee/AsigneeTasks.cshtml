@@ -1,0 +1,26 @@
+﻿@model EntityFrameworkExercise.Models.Asignee
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TODO asignee tasks</title>
+    <link rel='stylesheet' href='~/css/site.css' />
+</head>
+<body>
+    <h1>Asignee tasks</h1>
+    <table class="table-responsive-lg table-striped">
+        <thead>
+            <tr>TASK TITLE</tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var task in Model.Tasks)
+                {
+                    <th>@(task.Title == null ? "" : task.Title)</th>
+                }
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <a type="button" class="btn btn-outline-secondary" href="/">Home</a>
+</body>
+</html>
